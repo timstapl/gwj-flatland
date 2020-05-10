@@ -5,6 +5,10 @@ export var speed : int = 200
 var target = Vector2()
 var velocity = Vector2()
 
+func _ready():
+	# Prevent player from moving on scene start
+	target = self.position
+
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
 		target = event.position
